@@ -10,9 +10,8 @@
 ## Git branch
 - <code>main</code> : 제품으로 출시될 수 있는 브랜치
 - <code>develop</code> : 다음 출시 버전을 개발하는 브랜치
-- <code>feature</code> : 기능을 개발하는 브랜치
-- <code>release</code> : 이번 출시 버전을 준비하는 브랜치
-- <code>feature/sign</code>와 같이 <code>브랜치/기능</code> 형태로 브랜치를 생성한다.
+- <code>feature</code> : 기능을 개발하는 브랜치\
+-> <code>feature/sign</code>와 같이 <code>브랜치/기능</code> 형태로 브랜치를 생성한다.
 
 ## Commit Convention
 - <a href="https://gist.github.com/stephenparish/9941e89d80e2bc58a153">AngularJS Git Commit Message Conventions</a>을 따른다.
