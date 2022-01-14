@@ -1,13 +1,14 @@
-import Head from 'next/head';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  color: red;
+`;
 
 const Home: React.VFC = () => {
   return (
     <div>
-      <Head>
-        <title>Monit</title>
-        <link rel="favicon" href="/favicon.ico" />
-      </Head>
       <div>Hello World!!</div>
+      <Button>Button</Button>
     </div>
   );
 };
