@@ -1,4 +1,4 @@
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Typography } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -8,18 +8,22 @@ const SideBar = () => {
     <Sider breakpoint="lg" collapsedWidth="0">
       <div className="logo" />
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-        <Menu.Item key="1">Monit</Menu.Item>
+        <div key="1" style={{ padding: '4px 24px' }}>
+          <Typography.Title level={2} style={{ color: 'white' }}>
+            Monit
+          </Typography.Title>
+        </div>
         <Menu.Item key="2" icon={<UserOutlined />}>
-          nav 1
+          DashBoard
         </Menu.Item>
         <Menu.Item key="3" icon={<VideoCameraOutlined />}>
-          nav 2
+          Tables
         </Menu.Item>
         <Menu.Item key="4" icon={<UploadOutlined />}>
-          nav 3
+          Map
         </Menu.Item>
         <Menu.Item key="5" icon={<UserOutlined />}>
-          nav 4
+          Register
         </Menu.Item>
       </Menu>
     </Sider>

@@ -8,7 +8,7 @@ const BaseLayout: React.FC = ({ children }) => {
   return (
     <Layout style={{ height: '100vh' }}>
       <SideBar />
-      <Layout style={{ height: '100%' }}>
+      <Layout>
         <Header />
         <Content style={{ margin: '24px 16px' }}>{children}</Content>
       </Layout>

@@ -1,14 +1,9 @@
-import styled from 'styled-components';
-
-const Button = styled.button`
-  color: red;
-`;
+import { Typography } from 'antd';
 
 const Home: React.VFC = () => {
   return (
     <div>
-      <div>Hello World!!</div>
-      <Button>Button</Button>
+      <Typography.Title>Hello World!!</Typography.Title>
     </div>
   );
 };
