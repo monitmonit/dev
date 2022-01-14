@@ -1,6 +1,6 @@
 import { Menu } from 'antd';
 
-const Header = () => {
+const Header: React.VFC = () => {
   return (
     <Menu theme="light" mode="horizontal">
       <Menu.Item key="1">Item 1</Menu.Item>

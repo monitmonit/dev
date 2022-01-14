@@ -3,26 +3,25 @@ import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/i
 
 const { Sider } = Layout;
 
-const SideBar = () => {
+const SideBar: React.VFC = () => {
   return (
     <Sider breakpoint="lg" collapsedWidth="0">
-      <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-        <div key="1" style={{ padding: '4px 24px' }}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+        <div style={{ padding: '4px 24px' }}>
           <Typography.Title level={2} style={{ color: 'white' }}>
             Monit
           </Typography.Title>
         </div>
-        <Menu.Item key="2" icon={<UserOutlined />}>
+        <Menu.Item key="1" icon={<UserOutlined />}>
           DashBoard
         </Menu.Item>
-        <Menu.Item key="3" icon={<VideoCameraOutlined />}>
+        <Menu.Item key="2" icon={<VideoCameraOutlined />}>
           Tables
         </Menu.Item>
-        <Menu.Item key="4" icon={<UploadOutlined />}>
+        <Menu.Item key="3" icon={<UploadOutlined />}>
           Map
         </Menu.Item>
-        <Menu.Item key="5" icon={<UserOutlined />}>
+        <Menu.Item key="4" icon={<UserOutlined />}>
           Register
         </Menu.Item>
       </Menu>
