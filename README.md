@@ -4,7 +4,7 @@
 <img src="https://user-images.githubusercontent.com/46489446/149169674-9838e704-1cfc-46b7-ac4a-495dd5597187.png" width="350" title="Cover Image" align="right">
 
 ## Git Flow
-**[참고]**
+[참고]
 - https://techblog.woowahan.com/2553/
 
 ## Git branch
