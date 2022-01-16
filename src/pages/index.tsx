@@ -1,13 +1,9 @@
-import Head from 'next/head';
+import { Typography } from 'antd';
 
 const Home: React.VFC = () => {
   return (
     <div>
-      <Head>
-        <title>Monit</title>
-        <link rel="favicon" href="/favicon.ico" />
-      </Head>
-      <div>Hello World!!</div>
+      <Typography.Title>Hello World!!</Typography.Title>
     </div>
   );
 };
