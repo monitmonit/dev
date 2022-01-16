@@ -1,19 +1,16 @@
-import { Layout } from 'antd';
-import SideBar from './SideBar';
+import { Box } from '@mui/material';
 import Header from './Header';
 
-const { Content } = Layout;
 
 const BaseLayout: React.FC = ({ children }) => {
   return (
-    <Layout style={{ height: '100vh' }}>
-      <SideBar />
-      <Layout>
-        <Header />
-        <Content style={{ margin: '24px 16px' }}>{children}</Content>
-      </Layout>
-    </Layout>
-  );
+    <Box sx={{  display:'flex', margin:'auto', maxWidth: '1382px', flexDirection:'column'}}>
+       <Header />
+       <div>
+       {children}
+       </div>
+    </Box>
+  );    
 };
 
 export default BaseLayout;
