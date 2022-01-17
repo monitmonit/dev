@@ -1,11 +1,11 @@
 import BaseLayout from '../components/layout/BaseLayout';
 
-const Home: React.VFC = () => {
+const Korea: React.VFC = () => {
   return (
     <BaseLayout>
-      <div>Hello World</div>
+      <div>Korea</div>
     </BaseLayout>
   );
 };
 
-export default Home;
+export default Korea;

@@ -1,11 +1,26 @@
-import { Menu } from 'antd';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+
+import HomeMenu from './HomeMenu';
+import MenuItem from './MenuItem';
+
+const countries = ['korea', 'japan', 'china', 'mongolia', 'taiwan'];
 
 const Header: React.VFC = () => {
+  const mapcountries = (countries: string[]) => {
+    return countries.map((country) => <MenuItem key={country} country={`${country}`} />);
+  };
+
   return (
-    <Menu theme="light" mode="horizontal">
-      <Menu.Item key="1">Item 1</Menu.Item>
-      <Menu.Item key="2">Item 2</Menu.Item>
-    </Menu>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" color="transparent">
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <HomeMenu />
+          {mapcountries(countries)}
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 

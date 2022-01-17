@@ -1,18 +1,17 @@
-import { Layout } from 'antd';
-import SideBar from './SideBar';
+import React from 'react';
+import Container from '@mui/material/Container';
 import Header from './Header';
-
-const { Content } = Layout;
+import GlobalStyle from '../../styles/GlobalStyle';
 
 const BaseLayout: React.FC = ({ children }) => {
   return (
-    <Layout style={{ height: '100vh' }}>
-      <SideBar />
-      <Layout>
+    <React.Fragment>
+      <GlobalStyle />
+      <Container sx={{ maxWidth: '1382px' }}>
         <Header />
-        <Content style={{ margin: '24px 16px' }}>{children}</Content>
-      </Layout>
-    </Layout>
+        <Container sx={{ flexGrow: 1, py: 3 }}>{children}</Container>
+      </Container>
+    </React.Fragment>
   );
 };
 
