@@ -1,14 +1,12 @@
-import BaseLayout from "../components/layout/BaseLayout";
-import GlobalStyle from "../styles/GlobalStyle";
+import BaseLayout from '../components/layout/BaseLayout';
+import GlobalStyle from '../styles/GlobalStyle';
 
 const Home: React.VFC = () => {
   return (
     <div>
-    <GlobalStyle/>
+      <GlobalStyle />
       <BaseLayout>
-        <div>
-          Hello
-        </div>
+        <div style={{ color: 'red' }}>Helloasdasd</div>
       </BaseLayout>
     </div>
   );
