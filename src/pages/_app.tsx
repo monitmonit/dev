@@ -3,7 +3,7 @@ import React from 'react';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
   return (
     <React.Fragment>
       <Head>

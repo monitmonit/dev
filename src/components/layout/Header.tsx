@@ -2,10 +2,10 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 
-import MenuItem from './MenuItem';
 import HomeMenu from './HomeMenu';
+import MenuItem from './MenuItem';
 
-const countries = ['Korea', 'Japan', 'China', 'Mongolia', 'Taiwan'];
+const countries = ['korea', 'japan', 'china', 'mongolia', 'taiwan'];
 
 const Header: React.VFC = () => {
   const mapcountries = (countries: string[]) => {

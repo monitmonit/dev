@@ -1,13 +1,11 @@
-import React, { ReactElement } from 'react'
+import BaseLayout from '../components/layout/BaseLayout';
 
-interface Props {
-    
-}
+const Korea: React.VFC = () => {
+  return (
+    <BaseLayout>
+      <div>Korea</div>
+    </BaseLayout>
+  );
+};
 
-export default function Korea({}: Props): ReactElement {
-    return (
-        <div>
-            Korea
-        </div>
-    )
-}
+export default Korea;

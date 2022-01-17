@@ -1,13 +1,12 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement } from 'react';
+import BaseLayout from '../components/layout/BaseLayout';
 
-interface Props {
-    
-}
+interface Props {}
 
-export default function China({}: Props): ReactElement {
-    return (
-        <div>
-            China
-        </div>
-    )
+export default function Japan({}: Props): ReactElement {
+  return (
+    <BaseLayout>
+      <div>China</div>
+    </BaseLayout>
+  );
 }

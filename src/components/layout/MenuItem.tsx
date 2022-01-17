@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 interface HeaderItemProps {
   country: string;
@@ -8,9 +8,7 @@ interface HeaderItemProps {
 const HeaderItem: React.VFC<HeaderItemProps> = ({ country }) => {
   return (
     <Link href={`/${country}`}>
-      <Typography align="center" variant="h5" sx={{ color: '#fff' }}>
-        {country}
-      </Typography>
+      <Typography variant="h6">{country.toUpperCase()}</Typography>
     </Link>
   );
 };
