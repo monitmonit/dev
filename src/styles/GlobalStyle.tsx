@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
     color:#fff;
     background-color: #000;
   }
-
 `;
 
 export default GlobalStyle;

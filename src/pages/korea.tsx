@@ -5,13 +5,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import BaseLayout from '../components/layout/BaseLayout';
 
 const Korea = () => {
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        suspense: true,
-      },
-    },
-  });
+  const queryClient = new QueryClient();
 
   return (
     <BaseLayout>
