@@ -1,3 +1,4 @@
+import React from 'react';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
 
@@ -10,16 +11,17 @@ const HomeMenu: React.VFC = () => {
           height="36"
           viewBox="0 0 24 24"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M20 2C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V4C2 2.89543 2.89543 2 4 2H20ZM18 4C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18Z"
             fill="#2F74C0"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M20 2C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V4C2 2.89543 2.89543 2 4 2H20ZM18 4C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18Z"
             fill="#2F74C0"
           />
@@ -56,14 +58,14 @@ const HomeMenu: React.VFC = () => {
             fill="#2F74C0"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M18.4596 7.19696L15.2007 14.8009L10.0781 10.7028L6.39043 15.3123L5.60956 14.6877L9.92191 9.29722L14.7993 13.1991L17.5404 6.80304L18.4596 7.19696Z"
             fill="#2F74C0"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M18.4596 7.19696L15.2007 14.8009L10.0781 10.7028L6.39043 15.3123L5.60956 14.6877L9.92191 9.29722L14.7993 13.1991L17.5404 6.80304L18.4596 7.19696Z"
             fill="#2F74C0"
           />
