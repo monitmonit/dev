@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ width, height, children }) => {
   return (
-    <MyCard width={width} height={height}>
+    <MyCard width={width} height={height} padding={1}>
       {children}
     </MyCard>
   );
