@@ -1,3 +1,4 @@
+import React from 'react';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
 
@@ -10,7 +11,8 @@ const HomeMenu: React.VFC = () => {
           height="36"
           viewBox="0 0 24 24"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             fillRule="evenodd"
             clipRule="evenodd"

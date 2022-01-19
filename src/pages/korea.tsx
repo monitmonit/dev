@@ -1,8 +1,9 @@
+import React from 'react';
 import Main from '../components/korea';
+import BaseLayout from '../components/layout/BaseLayout';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import BaseLayout from '../components/layout/BaseLayout';
 
 const Korea = () => {
   const queryClient = new QueryClient();

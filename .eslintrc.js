@@ -29,10 +29,16 @@ module.exports = {
     semi: ['error', 'always'],
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
     'react/display-name': 'off',
     'react/prop-types': 'off',
     'prettier/prettier': 'error',
-    'no-used-vars': 2,
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
   settings: {
     react: {

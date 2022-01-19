@@ -1,3 +1,4 @@
+import React from 'react';
 import Box from '@mui/material/Box';
 import styled from 'styled-components';
 
@@ -9,7 +10,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ width = 'auto', height = 'auto', children }) => {
   return (
-    <MyCard width={width} height={height} padding={1}>
+    <MyCard width={width} height={height} padding={1.5} flexGrow={1}>
       {children}
     </MyCard>
   );
