@@ -6,7 +6,7 @@ interface Queries {
   lastDays?: string | number;
 }
 
-const fetchSeriesDataByCountry = async ({
+const fetchHistoryDataByCountry = async ({
   country,
   lastDays = 'all',
 }: Queries): Promise<HistoricalData> => {
@@ -15,4 +15,4 @@ const fetchSeriesDataByCountry = async ({
   return response.data as HistoricalData;
 };
 
-export default fetchSeriesDataByCountry;
+export default fetchHistoryDataByCountry;

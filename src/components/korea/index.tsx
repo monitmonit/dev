@@ -16,7 +16,7 @@ const Main: React.VFC = () => {
   const queryResults = useQueries([
     { queryKey: 'total', queryFn: () => fetchTotalDataByCountry({ country: 'KR' }) },
     {
-      queryKey: ['history'],
+      queryKey: 'history',
       queryFn: () => fetchHistoryDataByCountry({ country: 'KR', lastDays: 30 }),
     },
   ]);
