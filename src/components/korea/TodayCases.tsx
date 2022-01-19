@@ -2,42 +2,13 @@ import React from 'react';
 import Card from './Card';
 import { Box, Typography } from '@mui/material';
 
-interface Data {
-  data: {
-    updated: number;
-    country: string;
-    countryInfo: {
-      _id: number;
-      iso2: string;
-      iso3: string;
-      lat: number;
-      long: number;
-      flag: string;
-    };
-    cases: number;
-    todayCases: number;
-    deaths: number;
-    todayDeaths: number;
-    recovered: number;
-    todayRecovered: number;
-    active: number;
-    critical: number;
-    casesPerOneMillion: number;
-    deathsPerOneMillion: number;
-    tests: number;
-    testsPerOneMillion: number;
-    population: number;
-    continent: number;
-    oneCasePerPeople: number;
-    oneDeathPerPeople: number;
-    oneTestPerPeople: number;
-    activePerOneMillion: number;
-    recoveredPerOneMillion: number;
-    criticalPerOneMillion: number;
-  };
+import type { TotalData } from '../../types';
+
+interface TodayCasesProps {
+  data: TotalData;
 }
 
-const TodayCases: React.VFC<Data> = ({
+const TodayCases: React.VFC<TodayCasesProps> = ({
   data: { todayCases, critical, todayDeaths, todayRecovered },
 }) => {
   return (

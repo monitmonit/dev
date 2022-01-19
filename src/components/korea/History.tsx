@@ -1,9 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import { Box, Typography } from '@mui/material';
-
-import { useQuery } from 'react-query';
-import fetchSeriesDataByCountry from '../../api/fetchSeriesDataByCountry';
+import { Box, Button, Typography } from '@mui/material';
 
 import {
   Chart as ChartJS,
@@ -16,6 +13,12 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
+import type { HistoricalData } from '../../types';
+
+interface HistoryProps {
+  data: HistoricalData;
+}
+
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const options = {
@@ -24,15 +27,10 @@ const options = {
       position: 'right' as const,
     },
   },
-  outerHeight: '100px',
   maintainAspectRatio: false,
 };
 
-const History: React.VFC = () => {
-  const { data: rawData } = useQuery('history', () =>
-    fetchSeriesDataByCountry({ country: 'KR', lastDays: 30 }),
-  );
-
+const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
   const labels = [];
   const data = [];
 
@@ -61,12 +59,21 @@ const History: React.VFC = () => {
   };
 
   return (
-    <Box>
-      <Card height="348px">
-        <Typography variant="h6">변화 추이</Typography>
-        <Bar options={options} data={chartData} />
-      </Card>
-    </Box>
+    <Card height="348px">
+      <Box display="flex" flexDirection="column" gap={3}>
+        <Box display="flex" justifyContent="space-between">
+          <Typography variant="h6">변화 추이</Typography>
+          <Box>
+            <Button>년</Button>
+            <Button>월</Button>
+            <Button>주</Button>
+          </Box>
+        </Box>
+        <Box height="300px">
+          <Bar options={options} data={chartData} />
+        </Box>
+      </Box>
+    </Card>
   );
 };
 

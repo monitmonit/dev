@@ -5,15 +5,27 @@ import TodayCases from './TodayCases';
 import Box from '@mui/material/Box';
 
 import axios from 'axios';
-import { useQuery } from 'react-query';
+import { useQueries } from 'react-query';
+
 import fetchTotalDataByCountry from '../../api/fetchTotalDataByCountry';
+import fetchHistoryDataByCountry from '../../api/fetchHistoryDataByCountry';
+
+axios.defaults.baseURL = 'https://disease.sh/v3/covid-19';
 
 const Main: React.VFC = () => {
-  axios.defaults.baseURL = 'https://disease.sh/v3/covid-19';
+  const queryResults = useQueries([
+    { queryKey: 'total', queryFn: () => fetchTotalDataByCountry({ country: 'KR' }) },
+    {
+      queryKey: ['history'],
+      queryFn: () => fetchHistoryDataByCountry({ country: 'KR', lastDays: 30 }),
+    },
+  ]);
 
-  const { data, isSuccess, isLoading, isError } = useQuery('korea', () =>
-    fetchTotalDataByCountry({ country: 'KR' }),
-  );
+  const isLoading = queryResults.some((query) => query.isLoading);
+  const isError = queryResults.some((query) => query.isError);
+  const isSuccess = queryResults.every((query) => query.isSuccess);
+
+  const [total, history] = queryResults;
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -23,11 +35,11 @@ const Main: React.VFC = () => {
     return (
       <Box position="relative" display="flex" flexDirection="column" gap={2}>
         <Box display="flex" gap={2}>
-          <TodayCases data={data} />
-          <AccumulatedCases data={data} />
+          <TodayCases data={total.data} />
+          <AccumulatedCases data={total.data} />
         </Box>
         <Box>
-          <History />
+          <History data={history.data} />
         </Box>
       </Box>
     );
