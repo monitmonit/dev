@@ -1,32 +1,18 @@
 import axios from 'axios';
+import type { HistoricalData } from '../types';
 
 interface Queries {
   country: string | number;
   lastDays?: string | number;
 }
 
-interface Data {
-  country: string;
-  province: string[];
-  timeline: {
-    cases: {
-      [key: string]: number;
-    };
-    deaths: {
-      [key: string]: number;
-    };
-    recovered: {
-      [key: string]: number;
-    };
-  };
-}
-
-const baseURL = 'https://disease.sh/v3/covid-19/historical';
-
-const fetchSeriesDataByCountry = async ({ country, lastDays = 'all' }: Queries): Promise<Data> => {
-  const response = await axios.get(`${baseURL}/${country}`);
+const fetchSeriesDataByCountry = async ({
+  country,
+  lastDays = 'all',
+}: Queries): Promise<HistoricalData> => {
+  const response = await axios.get(`historical/${country}?lastDays=${lastDays}`);
   console.log(response.data);
-  return response.data as Data;
+  return response.data as HistoricalData;
 };
 
 export default fetchSeriesDataByCountry;

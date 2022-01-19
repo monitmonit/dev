@@ -4,10 +4,13 @@ import History from './History';
 import TodayCases from './TodayCases';
 import Box from '@mui/material/Box';
 
+import axios from 'axios';
 import { useQuery } from 'react-query';
 import fetchTotalDataByCountry from '../../api/fetchTotalDataByCountry';
 
 const Main: React.VFC = () => {
+  axios.defaults.baseURL = 'https://disease.sh/v3/covid-19';
+
   const { data, isSuccess, isLoading, isError } = useQuery('korea', () =>
     fetchTotalDataByCountry({ country: 'KR' }),
   );

@@ -3,7 +3,7 @@ import Card from './Card';
 import { Box, Typography } from '@mui/material';
 
 import { useQuery } from 'react-query';
-import fetchSeriesDataByCountry from '../../api/fetchSeriesDatabyCountry';
+import fetchSeriesDataByCountry from '../../api/fetchSeriesDataByCountry';
 
 import {
   Chart as ChartJS,
