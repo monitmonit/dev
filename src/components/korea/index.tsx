@@ -36,13 +36,13 @@ const Main: React.VFC = () => {
 
   if (isSuccess) {
     return (
-      <Box position="relative" display="flex" flexDirection="column" gap={2}>
-        <Box display="flex" gap={2}>
+      <Box position="relative" display="flex" flexDirection="column" gap={2} height="100%">
+        <Box display="flex" gap={2} flexGrow="1">
           <TodayCases data={total.data} />
           <AccumulatedCases data={total.data} />
           <Vaccine data={vaccine.data} />
         </Box>
-        <Box>
+        <Box flexGrow="2">
           <History data={history.data} />
         </Box>
       </Box>

@@ -14,7 +14,7 @@ const Header: React.VFC = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box width="100%">
       <AppBar position="static" color="transparent">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <HomeMenu />

@@ -24,7 +24,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 const options = {
   plugins: {
     legend: {
-      position: 'right' as const,
+      position: 'bottom' as const,
     },
   },
   maintainAspectRatio: false,
@@ -59,8 +59,8 @@ const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
   };
 
   return (
-    <Card>
-      <Box display="flex" flexDirection="column" gap={3}>
+    <Card height="90%">
+      <Box display="flex" flexDirection="column" gap={3} height="100%">
         <Box display="flex" justifyContent="space-between">
           <Typography variant="h6">변화 추이</Typography>
           <Box>
@@ -69,7 +69,7 @@ const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
             <Button>주</Button>
           </Box>
         </Box>
-        <Box height="300px">
+        <Box height="90%">
           <Bar options={options} data={chartData} />
         </Box>
       </Box>
