@@ -28,7 +28,7 @@ const MyCard = styled(Box)`
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-basis: 100%;
   border: 1px solid #4d4d4d;
   border-radius: 13px;
   background-color: #212427;

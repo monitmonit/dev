@@ -9,7 +9,7 @@ interface VaccineProps {
 }
 
 const Vaccine: React.VFC<VaccineProps> = ({ data }) => {
-  const totalVaccineData = data.item[0];
+  const totalVaccineData = data.item[1];
   return (
     <TitleCard title="백신 접종 현황">
       <Box display="flex" flexDirection="column" gap={1}>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import convert from 'xml-js';
+
 import type { Items, VaccineData } from '../types';
 
 const fetchVaccineData = async (): Promise<Items> => {
