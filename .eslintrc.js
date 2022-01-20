@@ -39,6 +39,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'no-console': 'error',
   },
   settings: {
     react: {

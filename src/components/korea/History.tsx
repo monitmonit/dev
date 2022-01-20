@@ -38,7 +38,6 @@ const History: React.VFC = () => {
   const labels = [];
   const data = [];
 
-  console.log(rawData);
   if (rawData) {
     let lastValue = 0;
     let index = 0;
