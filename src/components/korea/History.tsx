@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TitleCard from './TitleCard';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+
+import { useQuery } from 'react-query';
+import fetchHistoryDataByCountry from '../../api/fetchHistoryDataByCountry';
 
 import {
   Chart as ChartJS,
@@ -14,12 +17,6 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-import type { HistoricalData } from '../../types';
-
-interface HistoryProps {
-  data: HistoricalData;
-}
-
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const options = {
@@ -31,10 +28,17 @@ const options = {
   maintainAspectRatio: false,
 };
 
-const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
+const History: React.VFC = () => {
+  const [lastDays, setLastDays] = useState(30);
+
+  const { data: rawData } = useQuery(['history', lastDays], () =>
+    fetchHistoryDataByCountry({ country: 'KR', lastDays }),
+  );
+
   const labels = [];
   const data = [];
 
+  console.log(rawData);
   if (rawData) {
     let lastValue = 0;
     let index = 0;
@@ -62,9 +66,9 @@ const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
   return (
     <TitleCard title="변화추이" height="90%">
       <Box position="absolute" top="8px" right="8px">
-        <Button>년</Button>
-        <Button>월</Button>
-        <Button>일</Button>
+        <Button onClick={() => setLastDays(366)}>년</Button>
+        <Button onClick={() => setLastDays(31)}>월</Button>
+        <Button onClick={() => setLastDays(8)}>주</Button>
       </Box>
       <Bar options={options} data={chartData} />
     </TitleCard>
