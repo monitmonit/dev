@@ -1,6 +1,7 @@
 import React from 'react';
-import Card from './Card';
-import { Box, Button, Typography } from '@mui/material';
+import TitleCard from './TitleCard';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 import {
   Chart as ChartJS,
@@ -59,21 +60,14 @@ const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
   };
 
   return (
-    <Card height="90%">
-      <Box display="flex" flexDirection="column" gap={3} height="100%">
-        <Box display="flex" justifyContent="space-between">
-          <Typography variant="h6">변화 추이</Typography>
-          <Box>
-            <Button>년</Button>
-            <Button>월</Button>
-            <Button>주</Button>
-          </Box>
-        </Box>
-        <Box height="90%">
-          <Bar options={options} data={chartData} />
-        </Box>
+    <TitleCard title="변화추이" height="90%">
+      <Box position="absolute" top="8px" right="8px">
+        <Button>년</Button>
+        <Button>월</Button>
+        <Button>일</Button>
       </Box>
-    </Card>
+      <Bar options={options} data={chartData} />
+    </TitleCard>
   );
 };
 

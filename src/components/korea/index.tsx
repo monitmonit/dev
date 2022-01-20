@@ -42,7 +42,7 @@ const Main: React.VFC = () => {
           <AccumulatedCases data={total.data} />
           <Vaccine data={vaccine.data} />
         </Box>
-        <Box flexGrow="2">
+        <Box flexGrow="6">
           <History data={history.data} />
         </Box>
       </Box>
