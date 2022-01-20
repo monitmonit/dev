@@ -5,16 +5,19 @@ import BaseLayout from '../components/layout/BaseLayout';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
+import axios from 'axios';
+axios.defaults.baseURL = 'https://disease.sh/v3/covid-19';
+
 const Korea = () => {
   const queryClient = new QueryClient();
 
   return (
-    <BaseLayout>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <BaseLayout>
         <Main />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </BaseLayout>
+      </BaseLayout>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 };
 

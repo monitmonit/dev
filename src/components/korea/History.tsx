@@ -51,7 +51,7 @@ const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
     labels,
     datasets: [
       {
-        label: '누적 확진자',
+        label: '일일 확진자',
         data,
         backgroundColor: '#3178C6',
       },
@@ -59,7 +59,7 @@ const History: React.VFC<HistoryProps> = ({ data: rawData }) => {
   };
 
   return (
-    <Card height="348px">
+    <Card>
       <Box display="flex" flexDirection="column" gap={3}>
         <Box display="flex" justifyContent="space-between">
           <Typography variant="h6">변화 추이</Typography>

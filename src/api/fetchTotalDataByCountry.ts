@@ -15,11 +15,11 @@ const fetchDataByCountry = async ({
   strict = true,
   allowNull = false,
 }: Queries): Promise<TotalData> => {
-  const response = await axios.get(
+  const response = await axios.get<TotalData>(
     `countries/${country}?yesterdat=${yesterday}&twoDaysAgo=${twoDaysAgo}&strict=${strict}&allowNull=${allowNull}`,
   );
 
-  return response.data as TotalData;
+  return response.data;
 };
 
 export default fetchDataByCountry;

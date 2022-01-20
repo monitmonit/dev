@@ -10,9 +10,9 @@ const fetchHistoryDataByCountry = async ({
   country,
   lastDays = 'all',
 }: Queries): Promise<HistoricalData> => {
-  const response = await axios.get(`historical/${country}?lastDays=${lastDays}`);
-  console.log(response.data);
-  return response.data as HistoricalData;
+  const response = await axios.get<HistoricalData>(`historical/${country}?lastDays=${lastDays}`);
+
+  return response.data;
 };
 
 export default fetchHistoryDataByCountry;

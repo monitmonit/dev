@@ -47,4 +47,32 @@ interface HistoricalData {
   };
 }
 
-export type { TotalData, HistoricalData };
+interface VaccineData {
+  response: Response;
+}
+
+interface Response {
+  body: Body;
+}
+
+interface Body {
+  dataTime: string;
+  items: Items;
+}
+
+interface Items {
+  item: Item[];
+}
+
+interface Item {
+  tpcd: Text;
+  firstCnt: Text;
+  secondCnt: Text;
+  thirdCnt: Text;
+}
+
+interface Text {
+  text: string;
+}
+
+export type { TotalData, HistoricalData, VaccineData, Items };
