@@ -19,17 +19,14 @@ import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const options = {
-  plugins: {
-    legend: {
-      position: 'bottom' as const,
-    },
-  },
-  maintainAspectRatio: false,
-};
+enum LastDays {
+  Week = 8,
+  Month = 31,
+  Year = 366,
+}
 
 const History: React.VFC = () => {
-  const [lastDays, setLastDays] = useState(30);
+  const [lastDays, setLastDays] = useState(LastDays.Month);
 
   const { data: rawData } = useQuery(['history', lastDays], () =>
     fetchHistoryDataByCountry({ country: 'KR', lastDays }),
@@ -62,14 +59,23 @@ const History: React.VFC = () => {
     ],
   };
 
+  const options = {
+    plugins: {
+      legend: {
+        position: 'bottom' as const,
+      },
+    },
+    maintainAspectRatio: false,
+  };
+
   return (
     <TitleCard title="변화추이" height="90%">
       <Box position="absolute" top="8px" right="8px">
-        <Button onClick={() => setLastDays(366)}>년</Button>
-        <Button onClick={() => setLastDays(31)}>월</Button>
-        <Button onClick={() => setLastDays(8)}>주</Button>
+        <Button onClick={() => setLastDays(LastDays.Year)}>년</Button>
+        <Button onClick={() => setLastDays(LastDays.Month)}>월</Button>
+        <Button onClick={() => setLastDays(LastDays.Week)}>주</Button>
       </Box>
-      <Bar options={options} data={chartData} />
+      <Bar data={chartData} options={options} />
     </TitleCard>
   );
 };
